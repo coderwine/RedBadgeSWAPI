@@ -6,13 +6,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CharactersComponent } from './characters/characters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DrawerComponent } from './drawer/drawer.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CharactersComponent,
-    DrawerComponent
+    DrawerComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

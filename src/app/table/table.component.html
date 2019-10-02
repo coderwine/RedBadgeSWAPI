@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Film</th>
+        <th>Characters</th>
+        <th>Starships</th>
+    </tr>
+    <tr>
+        <td>{{movie}}</td>
+        <td *ngFor="movie in results">{{movie.characters}}</td>
+        <td *ngFor="movie in results">{{movie.starships}}</td>
+    </tr>
+</table>

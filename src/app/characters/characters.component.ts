@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
+  movie: 'string'
 
   constructor() { }
 
