@@ -5,19 +5,25 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CharactersComponent } from './characters/characters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
+
 import { AppMaterialModule } from './app.material.module';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
-=======
+
 import { DrawerComponent } from './drawer/drawer.component';
->>>>>>> 4072dbefc85a801b956e186edcb289dcff15a294
+
+
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-<<<<<<< HEAD
+
     CharactersComponent, 
     DropdownComponent
   ],
@@ -25,14 +31,20 @@ import { DrawerComponent } from './drawer/drawer.component';
     BrowserModule,
     BrowserAnimationsModule, 
     AppMaterialModule
-=======
+
     CharactersComponent,
-    DrawerComponent
+    SearchComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
+
     BrowserAnimationsModule
->>>>>>> 4072dbefc85a801b956e186edcb289dcff15a294
+
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
