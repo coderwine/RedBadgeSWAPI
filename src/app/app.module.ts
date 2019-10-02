@@ -9,10 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app.material.module';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
-
-import { DrawerComponent } from './drawer/drawer.component';
-
-
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -23,7 +19,6 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     NavbarComponent,
-
     CharactersComponent, 
     DropdownComponent
   ],
@@ -35,13 +30,7 @@ import { MatInputModule } from '@angular/material/input';
     CharactersComponent,
     SearchComponent,
     MessagesComponent
-  ],
-  imports: [
-    BrowserModule,
 
-    BrowserAnimationsModule
-
-    BrowserAnimationsModule,
     HttpClientModule,
     MatInputModule
 
