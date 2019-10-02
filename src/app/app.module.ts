@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MatInputModule } from '@angular/material/input';
+import {TableComponent} from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatInputModule } from '@angular/material/input';
     NavbarComponent,
     CharactersComponent,
     SearchComponent,
-    MessagesComponent
+    MessagesComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
