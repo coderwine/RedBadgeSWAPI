@@ -1,0 +1,25 @@
+.bodyx {
+    background-color: black;
+    color: white;
+    font-display: hidden;
+}
+
+.hmm {
+    width: 7vw;
+    height: auto;
+}
+
+.searchLab {
+    font-size: .75em;
+}
+.searchBar {
+    height: 3vh;
+    width: auto;
+    left: 20%;
+}
+
+.searchBtn {
+    height: 3.5vh;
+    width: auto;
+}
+
