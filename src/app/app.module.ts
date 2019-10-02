@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CharactersComponent } from './characters/characters.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppMaterialModule } from './app.material.module';
+import { DropdownComponent } from './dropdown/dropdown.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CharactersComponent
+    CharactersComponent, 
+    DropdownComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule, 
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

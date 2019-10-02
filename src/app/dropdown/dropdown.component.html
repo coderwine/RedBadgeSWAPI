@@ -1,0 +1,12 @@
+
+<h1>SWAPI Search</h1>
+<mat-form-field>
+        <label class="searchLab">Select Category</label>
+  <mat-select>
+    <mat-option *ngFor="let war of wars" [(value)]="war.value">
+      {{war.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<input placeholder="enter search term" class="searchBar" />
+<button value="submit" class="searchBtn">Search</button>
