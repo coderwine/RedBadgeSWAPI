@@ -14,41 +14,27 @@ export interface War {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
+
 export class SearchComponent implements OnInit {
+  searchPeople: any;
 
-    public _wars = [];
-
-  // onSubmit = () => {
-    
-  //   this.swapiService.searchPeople().subscribe((data) =>{
-  //     // console.log(data);
-  //     this._wars = data['results.films'];
-  //     console.log(this._wars);
-      
-  //   });
-  // }
-
-  onSubmit = (searchBox) => {
-    
-    this.swapiService.searchPeople(searchBox).subscribe(data => this.people$ =(data['results']))
-    this.data = this.people$
-    
-  }
-  people$;
-  data;
-  // people$: Observable<People[]>;
+  wars: War[] = [
+    {value: 'people', viewValue: 'People'},
+    {value: 'starships', viewValue: 'Ships'},
+    {value: 'films', viewValue: 'Films'}
+  ];
 
   constructor(private swapiService: SwapiService) { }
 
-  // search(term: string): void {
-  //   this.searchTerm.next(term);
-  // }
+  ngOnInit(){  
+  }
 
-  ngOnInit(): void {
-      // this.people$ = this.searchTerm.pipe(
-      // distinctUntilChanged(),
-      // switchMap((term: string) => this.swapiService.searchPeople(term))
-    // )
+  search(type: string, info: string): void {
+    this.swapiService.getPeople(type, info).subscribe(data => {
+      console.log(data);
+      this.searchPeople = data;
+      console.log(this.searchPeople.results);
+    })
   }
 
 }

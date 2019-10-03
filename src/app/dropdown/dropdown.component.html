@@ -4,7 +4,7 @@
 <mat-form-field>
         <label class="searchLab">So Many Wars</label>
   <mat-select>
-    <mat-option *ngFor="let war of wars" [(value)]="war.value">
+    <mat-option #type *ngFor="let war of wars" [(value)]="war.value">
       {{war.viewValue}}
     </mat-option>
   </mat-select>
