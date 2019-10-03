@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 html {
     background-image: radial-gradient(rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,1)),url('./assets/447ffd28667bde83d8a55ca254d84d35.jpg');
     background-size: 120%;
@@ -19,3 +20,4 @@ body {
     width: 50vw;
     border: 2pt solid black;
 }
+
