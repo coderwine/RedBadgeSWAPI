@@ -1,6 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SwapiService } from '../swapi.service';
 import { People } from '../people';
+import { Observable, Subject } from 'rxjs';
+import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 export interface War {
   value: string;
@@ -14,23 +16,38 @@ export interface War {
 })
 export class SearchComponent implements OnInit {
 
-  @Output() searchEvent = new EventEmitter();
+    public _wars = [];
 
+  // onSubmit = () => {
+    
+  //   this.swapiService.searchPeople().subscribe((data) =>{
+  //     // console.log(data);
+  //     this._wars = data['results.films'];
+  //     console.log(this._wars);
+      
+  //   });
+  // }
 
-  wars = People;
+  onSubmit = (searchBox) => {
+    
+    this.swapiService.searchPeople(searchBox).subscribe(data => this.people$ =(data['results']))
+    this.data = this.people$
+    
+  }
+  people$;
+  data;
+  // people$: Observable<People[]>;
 
   constructor(private swapiService: SwapiService) { }
   
-  onSubmit(searchValue: string, e) {
-    e.preventDefault()
-    this.searchEvent.emit(searchValue)
-    console.log(searchValue)
-  }
+  // search(term: string): void {
+  //   this.searchTerm.next(term);
+  // }
 
-  ngOnInit() {
-    this.swapiService.searchPeople('name').subscribe((data) =>{
-      console.log(data);
-      this.wars = data['wars'];
-    }); 
+  ngOnInit(): void {
+      // this.people$ = this.searchTerm.pipe(
+      // distinctUntilChanged(),
+      // switchMap((term: string) => this.swapiService.searchPeople(term))
+    // )
   }
 }
