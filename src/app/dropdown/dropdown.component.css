@@ -12,7 +12,7 @@
 .searchLab {
     font-size: .75em;
 }
-.searchBar {
+#searchBar {
     height: 3vh;
     width: auto;
     left: 20%;

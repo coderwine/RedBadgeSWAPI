@@ -1,6 +1,5 @@
-
 <h1>SWAPI Search</h1>
-<mat-form-field>
+<mat-form-field (ngSubmit)='performSearch(searchBar.value)'>
         <label class="searchLab">Select Category</label>
   <mat-select>
     <mat-option *ngFor="let war of wars" [(value)]="war.value">
@@ -8,5 +7,10 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
-<input placeholder="enter search term" class="searchBar" />
-<button value="submit" class="searchBtn">Search</button>
+<input placeholder="enter search term" id="searchBar"  (keyup.enter)='performSearch($event)'/>
+<button class="searchBtn" (click)='performSearch(searchBar)' type='submit' for='searchBar'>Search</button>
+
+<h1>{{clickMessage}}</h1>
+
+
+
