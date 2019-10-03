@@ -1,8 +1,18 @@
+
 <form class="example-form" >
         
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Search by Movie" value="Starwars XIV: So Many Forces!">
+          <input #searchBox matInput placeholder="Search by Movie">
         </mat-form-field>
-        <button value="submit" class="searchBtn">Engage!</button>
+        <button type="button" (click)='onSubmit(searchBox.value)'  class="searchBtn">Engage!</button>
 </form>
-      
+
+<ul  class="search-result">
+  <li *ngFor="let person of people$">
+      <a>
+      {{person.name}}
+  </a>
+  </li>
+</ul>      
+
+
