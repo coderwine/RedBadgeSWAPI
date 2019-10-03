@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
   constructor(private SwapiService: SwapiService) { }
 
   ngOnInit() {
-    this.SwapiService.getPeople()
+    this.SwapiService.searchPeople(' ')
     .subscribe((data) => {
       this.characters = data['characters'];
       console.log(data)
