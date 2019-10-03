@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SwapiService} from '../swapi.service';
+import {People} from '../people'
 
 @Component({
   selector: 'app-table',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
+  characters=People;
 
-  constructor() { }
+  constructor(private SwapiService: SwapiService) { }
 
   ngOnInit() {
+    this.SwapiService.getPeople()
+    .subscribe((data) => {
+      this.characters = data['characters'];
+      console.log(data)
+    })
   }
 
 }

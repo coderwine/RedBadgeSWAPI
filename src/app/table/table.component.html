@@ -4,9 +4,9 @@
         <th>Characters</th>
         <th>Starships</th>
     </tr>
-    <tr>
-        <td>{{movie}}</td>
-        <td >{{movie.characters}}</td>
-        <td >{{movie.starships}}</td>
+    <tr *ngFor="let x of data">
+        <td>{{x.results.films}}</td>
+        <td></td>
+        <td></td>
     </tr>
 </table>

@@ -90,11 +90,8 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-=======
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
->>>>>>> 4072dbefc85a801b956e186edcb289dcff15a294
               "src/styles.css"
             ],
             "scripts": []
