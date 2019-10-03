@@ -6,6 +6,7 @@ export interface War {
   value: string;
   viewValue: string;
 }
+
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
@@ -14,9 +15,9 @@ export interface War {
 export class DropdownComponent implements OnInit {
 
   wars: War[] = [
-    {value: 'people-0', viewValue: 'People'},
-    {value: 'ships-1', viewValue: 'Ships'},
-    {value: 'films-2', viewValue: 'Films'}
+    {value: 'people', viewValue: 'People'},
+    {value: 'starships', viewValue: 'Ships'},
+    {value: 'films', viewValue: 'Films'}
   ];
   constructor() { }
 

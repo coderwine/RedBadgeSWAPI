@@ -1,18 +1,33 @@
+<h1>Comb the Desert</h1>
+
+<mat-form-field>
+        <label class="searchLab">So Many Wars</label>
+  <mat-select #select>
+    <mat-option #type *ngFor="let war of wars" [(value)]="war.value">
+      {{war.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
 
 <form class="example-form" >
         
-        <mat-form-field class="example-full-width">
+        <mat-form-field #info class="example-full-width">
           <input #searchBox matInput placeholder="Search by Movie">
         </mat-form-field>
-        <button type="button" (click)='onSubmit(searchBox.value)'  class="searchBtn">Engage!</button>
+        <button type="button" (click)='search(select.value, searchBox.value)'  class="searchBtn">Engage!</button>
 </form>
-
+<div *ngIf="searchPeople">
 <ul  class="search-result">
-  <li *ngFor="let person of people$">
+  <li *ngFor="let person of searchPeople.results">
       <a>
-      {{person.name}}
+      Name: {{person.name}}
+      Gender: {{person.gender}}
+      
   </a>
   </li>
-</ul>      
+</ul>  
+</div>    
 
 

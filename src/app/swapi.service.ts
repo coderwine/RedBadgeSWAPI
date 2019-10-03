@@ -13,60 +13,17 @@ import { MessageService } from './message.service';
 
 export class SwapiService {
 
-    private swapiURL = 'https://swapi.co/api/people'
+    private swapiURL = 'https://swapi.co/api'
 
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'Application/json'})
     };
 
     constructor(
-        private http: HttpClient,
-        private messageService: MessageService) {} 
+        private http: HttpClient
+    ) {}
     
-    // People from API
-    getPeople (): Observable<People[]> {
-        return this.http.get<People[]>(this.swapiURL)
-        .pipe(
-            tap(_=> this.log('fetched Forced')),
-            catchError(this.handleError<People[]>('Wars in Stars', []))
-        );
+    getPeople(type: string, info: string): Observable<People[]> {
+        return this.http.get<People[]>(`${this.swapiURL}/${type}/?search=${info}`);
     }
-
-    // GET by ID
-    getPerson<Data>(id:number): Observable<People> {
-        const url = `${this.swapiURL}/?id=${id}`;
-        return this.http.get<People[]>(url)
-        .pipe(
-            map(someJedi => someJedi[0]),
-            tap(h => {
-                const outcome = h ? `fetched` : `not what you were looking for`;
-                this.log(`${outcome} person id=${id}`);
-            }),
-            catchError(this.handleError<People>(`getPerson id=${id}`))
-        );
-    }
-
-    // GET people w/ Search Term
-    searchPeople(term: string): Observable<People[]> {
-        if(!term.trim()) {
-            return of ([]);
-        }
-        return this.http.get<People[]>(`${this.swapiURL}/?name=$${term}`).pipe(
-            tap(_=> this.log(`Found the some possible Rebels matching "${term}"`)),
-            catchError(this.handleError<People[]>('searchPeople', []))
-        );
-    }
-
-    private handleError<T> (operation = 'operation', result?: T) {
-        return (error: any): Observable<T> => {
-            console.error(error);
-            this.log(`${operation} failed: ${error.message}`);
-            return of(result as T);
-        };
-    }
-
-    private log(message:string) {
-        this.messageService.add(`Looking for?... ${message}`);
-    }
-
 }
