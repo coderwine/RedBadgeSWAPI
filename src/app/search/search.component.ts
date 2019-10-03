@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { SwapiService } from '../swapi.service';
+import { People } from '../people';
+
+export interface War {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-search',
@@ -7,9 +14,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  wars = People;
+
+  constructor(private swapiService: SwapiService) { }
 
   ngOnInit() {
+    this.swapiService.getPeople().subscribe((data) =>{
+      console.log(data);
+      this.wars = data['wars'];
+    });
   }
 
 }

@@ -20,20 +20,16 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     NavbarComponent,
     CharactersComponent, 
+    SearchComponent,
+    MessagesComponent,
     DropdownComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule, 
-    AppMaterialModule
-
-    CharactersComponent,
-    SearchComponent,
-    MessagesComponent
-
+    BrowserAnimationsModule,
+    AppMaterialModule,
     HttpClientModule,
     MatInputModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
