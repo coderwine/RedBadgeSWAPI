@@ -8,3 +8,6 @@ updates:
     - created service.ts files for HTTP routing.
     - created people.ts to map individuals.
     - added Messages component.
+10/3
+updates:
+    - cleaned up folder structure and updated styling.
