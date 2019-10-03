@@ -19,8 +19,9 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     NavbarComponent,
-
     CharactersComponent, 
+    SearchComponent,
+    MessagesComponent,
     DropdownComponent
   ],
   imports: [
@@ -28,10 +29,7 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule, 
     AppMaterialModule,
     HttpClientModule,
-    MatInputModule,
-    CharactersComponent,
-    SearchComponent,
-    MessagesComponent
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
